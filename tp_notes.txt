@@ -1,0 +1,41 @@
+Détecter les différents plans: le grand plan + plan par locuteur + plan partiel (2, 3 ou 4 personnes)
+Images==> histogramme de couleur/gradient...
+
+Distinguer la présentatrice
+
+Distinguer les locuteurs: problème de clustering: 1/Audio: signature vocal 2/Image: histo couleur/gradient
+Distinguer les locueteurs du même opinion
+Détecter noms des intervenants
+
+Détecter le temps de paroles de chaque locuteur: Audio clustering?
+
+Opinion: Pour/contre
+
+Thème du débat: Travailler sur le bandeau. 
+Pour récupérer le thème, OCRéser l'image, reconnaissance de texte, utilisation de module open source mais boîte noire...
+
+Découpage: Généric + reportage + débat
+3 méthodes:
+Pour découper le généric et le reportage
+==> avoir la signature vocale + musicale ==> faire de la classification supervisée
+en se basant sur des data externes labellisées speech vs musique
+rajouter même une classe: silence (pour le dernier point)
+
+Pour découper le reportage et le débat:
+Travailler sur le bandeau ==> technique de détection de changement (nouveauté à base de distance)
+Calculer la distance entre les histogrammes : passé vs future à chaque instant t
+Mettre un treshold, au délà duquel, il y a un changement important d'image/ apparition du bandeau
+Sinon, faire du clustering ==> détecter les plans qui appartiennent au même plan
+
+La durée de l'intervention: dans le débat: intro + debat + conclusion
+Détecter les moments ou la présentatrice pose des questions
+
+Silence, pause,: rajouter une classe silence/pause en plus de musique et paroles
+==> détecter les pauses 
+
+Ne pas faire (hors contexte):
+Index de:
+	prise de paroles de chaque personne
+	du début du reportage, fin reportage
+	du début du débat....
+Speech-to-text
